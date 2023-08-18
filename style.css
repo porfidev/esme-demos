@@ -64,6 +64,10 @@ h1 {
   color: #888;
 }
 
+#app pre {
+  text-align: left;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;

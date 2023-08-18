@@ -1,24 +1,63 @@
 import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+import Swal from 'sweetalert2'
 
 document.querySelector('#app').innerHTML = `
   <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
+  <h1>Demos para Esme 💞</h1>
+      <button id="launchCustom">Custom Modal</button>
+      <button id="launchBasic">Swal Error Modal</button>
+      <details>
+       <summary>Código Custom Modal</summary>
+           <pre>
+           const buttomCustomSwal = document.querySelector('#launchCustom');
+
+            buttomCustomSwal.addEventListener('click', () =&gt; {
+                Swal.fire({
+                    html:
+                        '&lt;div&gt;&lt;img src=&quot;/peach-goma.gif&quot; width=&quot;200&quot;&gt;&lt;/div&gt;' +
+                        '&lt;b&gt;Warning&lt;/b&gt;, ' +
+                        '&lt;p&gt;Are yoy sure to apply these changes? The information' +
+                        'will be replace the previous one and you will not be able to' +
+                        'go back.',
+                    showCloseButton: true,
+                    showCancelButton: true,
+                    focusConfirm: false,
+                    confirmButtonText:
+                        'Cancel',
+                    cancelButtonText:
+                        'Apply',
+                })
+            })
+            </pre>
+       </details>
   </div>
 `
 
-setupCounter(document.querySelector('#counter'))
+const button = document.querySelector('#launchBasic');
+const buttomCustomSwal = document.querySelector('#launchCustom');
+button.addEventListener('click', () => {
+    Swal.fire({
+        title: 'Error!',
+        text: 'Do you want to continue',
+        icon: 'error',
+        confirmButtonText: 'Cool'
+    })
+})
+
+buttomCustomSwal.addEventListener('click', () => {
+    Swal.fire({
+        html:
+            '<div><img src="/peach-goma.gif" width="200"></div>' +
+            '<b>Warning</b>, ' +
+            '<p>Are yoy sure to apply these changes? The information' +
+            'will be replace the previous one and you will not be able to' +
+            'go back.',
+        showCloseButton: true,
+        showCancelButton: true,
+        focusConfirm: false,
+        confirmButtonText:
+            'Cancel',
+        cancelButtonText:
+            'Apply',
+    })
+})
