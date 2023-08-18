@@ -47,7 +47,7 @@ button.addEventListener('click', () => {
 buttomCustomSwal.addEventListener('click', () => {
     Swal.fire({
         html:
-            '<div><img src="/peach-goma.gif" width="200"></div>' +
+            '<div><img src="peach-goma.gif" width="200"></div>' +
             '<b>Warning</b>, ' +
             '<p>Are yoy sure to apply these changes? The information' +
             'will be replace the previous one and you will not be able to' +
